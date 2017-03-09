@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+</script>
+</head>
+<body>
+
+<h1 id='head'>My First Heading</h1>
+
+<p>My first paragraph.</p>
+
+<script>
+function getUrlParameter(sParam)
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+};
+var header = decodeURIComponent(getUrlParameter('header'));
+console.log(header);
+document.getElementById('head').innerHTML = header;
+</script>
+</body>
+</html>
